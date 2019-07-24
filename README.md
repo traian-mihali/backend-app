@@ -9,7 +9,7 @@ https://codewithmosh.com/
 
 https://enigmatic-headland-63076.herokuapp.com
 
-### APIs and supported HTTP methods
+### Supported HTTP methods for each API
 
 ```
 GET     /api/genres
