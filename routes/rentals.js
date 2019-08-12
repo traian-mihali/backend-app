@@ -1,5 +1,6 @@
 const validObjectId = require("../middleware/validObjectId");
 const auth = require("../middleware/auth");
+const admin = require("../middleware/admin");
 const { Rental, validate } = require("../models/rental");
 const { Movie } = require("../models/movie");
 const { Customer } = require("../models/customer");
@@ -57,6 +58,23 @@ router.post("/", auth, async (req, res) => {
   } catch (ex) {
     res.status(500).send("Something failed.");
   }
+});
+
+router.delete("/:id", [auth, admin, validObjectId], async (req, res) => {
+  const rental = await Rental.findByIdAndRemove(req.params.id);
+
+  if (!rental)
+    res.status(404).send("The Rental with the given Id was not found.");
+
+  if (!rental.dateReturned)
+    await Movie.update(
+      { _id: rental.movie._id },
+      {
+        $inc: { numberInStock: 1 }
+      }
+    );
+
+  res.send(rental);
 });
 
 router.get("/:id", validObjectId, async (req, res) => {
