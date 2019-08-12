@@ -7,3 +7,4 @@
 {"level":"info","message":"Listening on port 5000...","timestamp":"2019-08-12T12:11:15.454Z"}
 {"message":"Cannot set headers after they are sent to the client","stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at ServerResponse.setHeader (_http_outgoing.js:470:11)\n    at ServerResponse.header (C:\\Users\\Traian\\Desktop\\react-app\\vidly-api\\node_modules\\express\\lib\\response.js:771:10)\n    at ServerResponse.send (C:\\Users\\Traian\\Desktop\\react-app\\vidly-api\\node_modules\\express\\lib\\response.js:170:12)\n    at router.delete (C:\\Users\\Traian\\Desktop\\react-app\\vidly-api\\routes\\rentals.js:71:7)","level":"error","timestamp":"2019-08-12T12:12:02.826Z"}
 {"level":"info","message":"Listening on port 5000...","timestamp":"2019-08-12T12:15:44.009Z"}
+{"level":"info","message":"Listening on port 5000...","timestamp":"2019-08-12T12:26:19.479Z"}
